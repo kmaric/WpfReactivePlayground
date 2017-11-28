@@ -5,8 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfReactivePlayground"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="507.473" Width="734.784" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid Margin="0,-1,0.4,0.8">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel x:Name="MainHeader" Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2" Background="#152951">
+                <ProgressBar x:Name="MainProgresBar"  Background="Transparent"></ProgressBar>
+            </StackPanel>
+
+            <StackPanel x:Name="NavigationPanel" Background="#152951" Grid.Row="1" Grid.Column="0">
+                <Button x:Name="BtnStart" Content="Start" Height="50" Margin="1, 5, 2, 0" Background="#2f5cb6" Foreground="White" FontSize="20" Click="BtnStart_Click"/>
+                <Button x:Name="BtnStop" Content="Stop" Height="50" Margin="1, 5, 2 , 10" Background="#2f5cb6" Foreground="White" FontSize="20" Click="BtnStop_Click"/>
+                <Separator />
+                <Button x:Name="BtnPageOne" Content="Page One" Height="50" Margin="1, 10, 2, 0" Background="#2f5cb6" Foreground="White" FontSize="20" Click="BtnPageOne_Click" />
+                <Button x:Name="BtnPageTwo" Content="Page Two" Height="50" Margin="1, 10, 2, 0" Background="#2f5cb6" Foreground="White" FontSize="20" Click="BtnPageTwo_Click" />
+            </StackPanel>
+
+            <DockPanel x:Name="MainContent" Background="#1f3d7a" Grid.Row="1" Grid.Column="1">
+                <Frame x:Name="MainFrame" Foreground="White" NavigationUIVisibility="Hidden" />
+            </DockPanel>
+        </Grid>
     </Grid>
 </Window>
