@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfReactivePlayground.ViewModels;
+using ReactiveUI;
 
 namespace WpfReactivePlayground.Pages
 {
@@ -31,9 +32,16 @@ namespace WpfReactivePlayground.Pages
 
         public PageOne(object param)
         {
+            InitializationProcess(param);
+        }
+
+        private void InitializationProcess(object param)
+        {
             InitializeComponent();
             PageOneViewModel = new PageOneViewModel(param);
             this.DataContext = PageOneViewModel;
+
+            
         }
     }
 }

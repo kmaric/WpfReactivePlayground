@@ -65,6 +65,7 @@ namespace WpfReactivePlayground
         }
 
         private void BtnStart_Click(object sender, RoutedEventArgs e)
+
         {
             BackgroundWorker.RunWorkerAsync();
         }
